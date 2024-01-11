@@ -1,22 +1,17 @@
 <template>
-    <div class="play-content">
-      <div>
-        <video id="video" controls autoplay style="text-align: left;width: 60%;">
+    <div class="play-content" style="background-color: white; align-items: center;">
+        <video id="video" controls autoplay style="text-align: left;width: 30%; align-items: center;">
           Your browser is too old which doesn't support HTML5 video.
         </video>
-      </div>
       <div>
         <p>
-          <label for="streamUrl">url:</label>
-          <input
-            type="text"
-            style="co"
-            v-model="PlayUrl"
-            id="streamUrl"
-          />
+          <!-- <label for="streamUrl">url:</label> -->
+          <el-input  type="text" style="width: 30%;" v-model="PlayUrl" id="streamUrl" placeholder="请输入视频流地址" size="medium">
+            <template slot="prepend">Http://</template>
+          </el-input>
         </p>
-        <button @click="start()">开始(start)</button>
-        <button @click="stop()">停止(stop)</button>
+        <el-button icon="el-icon-video-play el-icon--right" type="primary" @click="start()">开始</el-button>
+        <el-button icon="el-icon-video-pause el-icon--right" type="info" @click="stop()">暂停</el-button>
       </div>
     </div>
   </template>
@@ -47,8 +42,8 @@
   const PlayUrl = ref(url)
    
   const start_play = () => {
-    let h = 720
-    let w = 1280
+    let h = 72
+    let w = 128
    
     player = new ZLMRTCClient.Endpoint({
       element: document.getElementById('video'), // video 标签
@@ -110,8 +105,8 @@
   const start = () => {
     stop()
    
-    let h = 720
-    let w = 1280
+    let h = 72
+    let w = 128
    
     if (!recvOnly) {
       ZLMRTCClient.isSupportResolution(w, h)
@@ -141,11 +136,10 @@
    
   <style scoped>
   .play-content{
-    background-color: black;
-    border: red 1px solid;
-    width: 100%;
-    height: 100%;
+    background-color: white;
     color: white;
+    justify-self: center;
+    text-align: center;
   }
   </style>
    

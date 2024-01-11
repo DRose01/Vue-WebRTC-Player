@@ -17,5 +17,33 @@ mkcert localhost 127.0.0.1 ::1
 
 ## 项目运行
 ```
+npm install 
+
 npm run serve
+```
+```
+player
+├─ .gitignore
+├─ LICENSE
+├─ README.md
+├─ babel.config.js
+├─ cert.pem
+├─ jsconfig.json
+├─ key.pem
+├─ package-lock.json
+├─ package.json
+├─ public
+│  ├─ favicon.ico
+│  └─ index.html
+├─ src
+│  ├─ App.vue
+│  ├─ assets
+│  │  └─ logo.png
+│  ├─ components
+│  │  ├─ PlayByUrl.vue
+│  │  ├─ VideoPlayer.vue
+│  │  └─ RTCDependence.js
+│  └─ main.js
+└─ vue.config.js
+
 ```
